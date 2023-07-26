@@ -1,0 +1,30 @@
+services:
+  bitespeed:
+    environment:
+      - PYTHONUNBUFFERED=1
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    ports:
+      - "5000:5000"
+    networks:
+      - bitespeed_network
+  db:
+    image: postgres:14.1-alpine
+    restart: always
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    ports:
+      - '5432:5432'
+    networks:
+      - bitespeed_network
+    volumes:
+      - db:/var/lib/postgresql/data
+
+networks:
+  bitespeed_network:
+
+volumes:
+  db:
+    driver: local

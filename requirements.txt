@@ -1,0 +1,5 @@
+Flask
+attr
+SQLAlchemy
+psycopg2
+
