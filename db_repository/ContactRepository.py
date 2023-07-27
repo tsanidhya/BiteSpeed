@@ -108,7 +108,7 @@ class ContactRepository:
             return Contact.from_responses(response_db)
 
     def get_contacts_with_linked_id(self,linkedid):
-        query = f"select * from Contact where linkedid = '{linkedid}' order by id asc;"
+        query = f"select * from Contact where linkedid = '{linkedid}' or id = '{linkedid}' order by id asc;"
         with self.engine.connect() as conn:
             response_db = conn.execute(text(query)).mappings().fetchall()
             return Contact.from_responses(response_db)

@@ -17,8 +17,8 @@ class Contact:
         print("d",d)
         obj =  cls()
         obj.id = d['id']
-        obj.phoneNumber=d['phonenumber'] if d['phonenumber'] else None
-        obj.email=d['email'] if d['email'] else None
+        obj.phoneNumber=d['phonenumber']
+        obj.email=d['email']
         obj.linkedId=d['linkedid'] if d['linkedid'] else None
         obj.linkPrecedence=d['linkprecedence']
         obj.createdAt=d['createdat']
