@@ -35,15 +35,15 @@ class ContactService:
 
         # process responses
         print(responses)
-        emails = [response.email for response in responses]
-        phoneNumbers = [response.phoneNumber for response in responses]
+        emails = [response.email for response in responses if response.email is not None]
+        phoneNumbers = [response.phoneNumber for response in responses if response.phoneNumber is not None]
         secondaryContactIds = []
         if len(responses) > 1:
             secondaryContactIds = [response.id for response in responses[1:]]
         return IdentifyResponse(
             primaryContatctId=responses[0].id,
-            emails=emails,
-            phoneNumbers=phoneNumbers,
+            emails=list(set(emails)),
+            phoneNumbers=list(set(phoneNumbers)),
             secondaryContactIds=secondaryContactIds
         ).ret_json()
 

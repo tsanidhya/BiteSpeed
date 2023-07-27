@@ -18,6 +18,6 @@ def identify(request=request):
     email = request.json['email']
     phoneNumber = request.json['phoneNumber']
     if not email and not phoneNumber:
-        return "Email and phoneNumber cannot be both now", 400  # status return
+        return "Email and phoneNumber cannot be both null", 400  # status return
     identify_request = IdentifyRequest(email, phoneNumber)
     return contactService.execute(identify_request), 200
