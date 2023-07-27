@@ -1,4 +1,4 @@
-create table Contact(
+create table if not exists Contact(
   id                   SERIAL PRIMARY KEY,
   phoneNumber          VARCHAR(15),
   email                VARCHAR(100),
@@ -9,5 +9,5 @@ create table Contact(
   deletedAt            timestamp
 );
 
-insert into contact(phonenumber,email,linkedid,linkprecedence,updatedat,deletedat)
-values('123','email',234,'fxhxh','2016-06-22 19:10:25-07',NULL);
+--insert into contact(phonenumber,email,linkedid,linkprecedence,updatedat,deletedat)
+-- values('1234','dummy@a.com',NULL,'primary','2023-07-24 20:12:08Z',NULL);
