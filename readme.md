@@ -42,7 +42,11 @@ DB_configs are maintained in config/static_configs.py
 
 note - this app was developed on a Intel machine and docker compose might differently on apple silicon chips.
 
-
+*** 
+As mentioned on Render.com web services documentation:
+Web Services on the free instance type are automatically spun down after 15 minutes of inactivity. When a new request for a free service comes in, Render spins it up again so it can process the request.
+This will cause a delay in the response of the first request after a period of inactivity while the instance spins up.
+***
 
 
 
