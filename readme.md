@@ -22,18 +22,29 @@ response format:
 
 
 
-To run the app: run the command "docker compose up --build" in the terminal inside the root directory.
+To run the app on Docker locally: run the command "docker compose up --build" in the terminal inside the root directory.
 The identify endpoint is hosted on localhost : 5000
 PostgreSQL database is hosted on localhost : 5432
 
-**note : both services are hosted inside docker
+*note : both services are hosted inside docker
 
-db_name = postgres,
-Username = postgres,
-password = postgres
-
-Link : localhost:5000/contact/identify
+URL : localhost:5000/contact/identify
 HTTP Method : POST
+
+Alternatively the app in deployed on render.com
+
+URL : https://bitespeed-app.onrender.com/contact/identify
+HTTP method : POST
+
+DB_configs are maintained in config/static_configs.py
+
+*Switch to DB_URI which is commented out(line 2) for hitting local postgres service if using docker compose.
+
+note - this app was developed on a Intel machine and docker compose might differently on apple silicon chips.
+
+
+
+
 
 
 
